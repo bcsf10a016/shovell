@@ -1,0 +1,23 @@
+<%= form_for @story do |f| %> 
+<% if @story.errors.any? %>  
+  <div id="errorExplanation">  
+    <h2><%= pluralize(@story.errors.count, "error") %> prohibited from saving data</h2>  
+    <ul>  
+    <% @story.errors.full_messages.each do |msg| %>  
+      <li><%= msg %></li>  
+    <% end %>  
+    </ul>  
+  </div>  
+  <% end %> 
+<p>
+ name:<br />
+ <%= f.text_field :name %> 
+</p> 
+<p>
+ desc:<br />
+ <%= f.text_field :desc %> 
+</p> 
+<p>
+ <%= submit_tag %> 
+</p> 
+<%  end %>
